@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Example</title>
+    <style>
+      .ansdiv {
+        position: absolute;
+        left: 0vh;
+        top: 0vh;
+        font-size: medium;
+        display: none;
+      }
+      .cancelbutton {
+        position: absolute;
+        left: 0vh;
+        top: 0vh;
+        font-size: medium;
+        display: none;
+      }
+      #values {
+        height: 80vh;
+        width: 60vw;
+        background-image: url("fire.jpg");
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+      }
+      .nodes {
+        position: absolute;
+        left: 0vh;
+        top: 0vh;
+        background-color: black;
+        color: white;
+        border-radius: 3vh;
+        height: 3vh;
+        width: 3vh;
+        justify-content: center;
+        text-align: center;
+        display: none;
+      }
+      svg {
+        position: absolute;
+        top: 0vh;
+        left: 0vh;
+        width: 100%;
+        height: 100%;
+      }
+      #inputs {
+        padding-top: 20vh;
+        height: 10vh;
+        width: 100vw;
+      }
+      /* #submitdiv {
+        background-color: yellow;
+        height: 10vh;
+        width: 10vh;
+        margin: 20vh 20vh;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="values">
+      <svg id="svgCanvas"></svg>
+    </div>
+    <div id="inputs">
+      <input type="number" id="userInput1" placeholder="Enter node 1" />
+      <input type="number" id="userInput2" placeholder="Enter node 2" />
+      <button id="submitButton">submit</button>
+      <button id="createadjlist">createadjlist</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
