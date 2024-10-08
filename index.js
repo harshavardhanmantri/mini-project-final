@@ -5,7 +5,7 @@ var paths = new Set();
 var z = 0;
 var edges = [];
 var exits = [];
-var colors = ["red", "blue"];
+var colors = ["red", "blue", "yellow", "orange", "pink", "gold"];
 var div;
 function drawLine(x1, y1, x2, y2) {
   const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -122,13 +122,16 @@ submitButton.addEventListener("click", function (e) {
     coords[userInput2].y
   );
 });
-
+var colorNodeMap = [""];
+let c = 0;
 exitsubmitButton.addEventListener("click", function () {
   const userInput3 = inputField3.value;
   const node = document.getElementById(`${userInput3}`);
   node.style.backgroundColor = "green";
   exits.push(userInput3);
-  console.log(exits);
+  colorNodeMap[userInput3] = colors[c];
+  c += 1;
+  console.log(colorNodeMap);
 });
 
 class Algorithm {
@@ -305,13 +308,13 @@ createadjl.addEventListener("click", function () {
       console.log(path);
       for (let h = 0; h < path.length - 1; h += 1) {
         const node = document.getElementById(`${path[h]}`);
-        node.style.backgroundColor = colors[x];
+        node.style.backgroundColor = colorNodeMap[path[path.length - 1]];
         drawline(
           coords[path[h]].x,
           coords[path[h]].y,
           coords[path[h + 1]].x,
           coords[path[h + 1]].y,
-          colors[x]
+          colorNodeMap[path[path.length - 1]]
         );
       }
       x += 1;
